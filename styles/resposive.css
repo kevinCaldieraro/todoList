@@ -1,0 +1,28 @@
+@media screen and (max-width: 951px) {
+
+    .createTasks h1,
+    .tasks-section h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .createTasks,
+    .tasks-section {
+        display: none;
+    }
+
+    .allTasks-mobile {
+        display: block;
+    }
+
+    .task-div {
+        width: 100%;
+    }
+
+    #btnCreateTask {
+        position: absolute;
+        bottom: 25px;
+    }
+}
