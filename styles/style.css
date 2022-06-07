@@ -125,7 +125,8 @@ main {
 }
 
 #input-task,
-.getTag,
+#getTag-desktop,
+#getTag-mobile,
 select {
     width: 100%;
     padding: 10px;
@@ -153,11 +154,11 @@ select {
     background-position: calc(100% - 10px);
 }
 
-.getTag {
+#getTag-desktop, #getTag-mobile {
     margin-bottom: 10px;
 }
 
-.saveTag {
+#saveTag-desktop, #saveTag-mobile {
     display: none;
     padding: 5px;
     background-color: var(--blue);
@@ -169,7 +170,7 @@ select {
     transition: all .5s ease;
 }
 
-.createTag {
+#createTag-desktop, #createTag-mobile {
     color: var(--blue);
     border: none;
     background-color: white;
