@@ -1,5 +1,8 @@
-var tasks = [];
-var tags = [];
+let tasks = [];
+let tags = [];
+let myStorage = window.localStorage;
+
+loadTags();
 
 //Animação para a tela de adicionar tarefa aparecer no mobile -----------------------
 let btnToScreenAdd = document.querySelector('.btnMobile-addtask');
@@ -47,7 +50,7 @@ function toggleInputTag(type) {
         inputTag.style.display = 'block';
         btnSave.style.display = 'block';
         btnCreate.innerHTML = "Cancelar"
-    } else{
+    } else {
         inputTag.style.display = 'none';
         btnSave.style.display = 'none';
         btnCreate.innerHTML = "+ adicionar nova tag"
@@ -67,12 +70,25 @@ function saveTag(type) {
     }
 
     if (inputTag.value != '') {
-        selectTagDesktop.innerHTML += '<option value = '+inputTag.value+'>'+inputTag.value+'</option>';
-        selectTagMobile.innerHTML += '<option value = '+inputTag.value+'>'+inputTag.value+'</option>';
+        selectTagDesktop.innerHTML += '<option value = ' + inputTag.value + '>' + inputTag.value + '</option>';
+        selectTagMobile.innerHTML += '<option value = ' + inputTag.value + '>' + inputTag.value + '</option>';
+
+        tags.push(inputTag.value);
+        myStorage.setItem('savedTags', JSON.stringify(tags));
+
         inputTag.value = '';
         toggleInputTag(type);
         alert('Tag criada');
     } else {
         alert('Para criar uma nova tag é necessário preencher o campo de texto!');
+    }
+}
+
+function loadTags () {
+    
+    tags = JSON.parse(myStorage.getItem('savedTags'));
+
+    if (tags) {
+        console.log(tags);
     }
 }
