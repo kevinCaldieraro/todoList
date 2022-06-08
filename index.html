@@ -1,100 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/resposive.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/resposive.css" />
     <title>To do list</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <!--------------- Interface desktop ------------------>
-        <section class="createTasks">
-            <h1>Lista to do</h1>
+      <!--------------- Interface desktop ------------------>
+      <section class="createTasks">
+        <h1>Lista to do</h1>
 
-            <div class="inputs">
-                <label for="input-task">Tarefa</label>
-                <input id="input-task" type="text">
+        <div class="inputs">
+          <label for="input-task">Tarefa</label>
+          <input id="input-task" type="text" />
 
-                <label for="tag">Tag</label>
-                <select id="tagSelect-desktop">
-                    <option value="personal">Pessoal</option>
-                </select>
+          <label for="tag">Tag</label>
+          <select id="tagSelect-desktop">
+            <option value="personal">Pessoal</option>
+          </select>
 
-                <button id="createTag-desktop" onclick="toggleInputTag('desktop')">+ adicionar nova tag</button>
-                <input id="getTag-desktop" type="text" style="display: none;">
-                <button id="saveTag-desktop" onclick="saveTag('desktop')">Salvar Tag</button>
-                <button id="btnCreateTask">Pronto</button>
+          <button id="createTag-desktop" onclick="toggleInputTag('desktop')">
+            + adicionar nova tag
+          </button>
+          <input id="getTag-desktop" type="text" style="display: none" />
+          <button id="saveTag-desktop" onclick="saveTag('desktop')">
+            Salvar Tag
+          </button>
+          <button id="btnCreateTask">Pronto</button>
+        </div>
+      </section>
+      <section class="tasks-section">
+        <h2>Tarefas</h2>
+
+        <div class="allTasks">
+          <div class="task-div">
+            <div class="taskInformations">
+              <label for="">
+                <input type="checkbox" id="checkTask" class="checkTask" />Limpar
+                casa</label
+              >
+              <span class="tagSpan">Casa</span>
             </div>
-
-        </section>
-        <section class="tasks-section">
-            <h2>Tarefas</h2>
-
-            <div class="allTasks">
-
-                <div class="task-div">
-                    <div class="taskInformations">
-                        <label for=""> <input type="checkbox" id="checkTask" class="checkTask">Limpar casa</label>
-                        <span class="tagSpan">Casa</span>
-                    </div>
-                    <div class="btnsEdit-delete">
-                        <button id="btnEdit"><img src="./assets/images/pen.png" alt="btn edit"></button>
-                        <button id="btnDelete"><img src="./assets/images/trash-bin.png" alt="btn trash"></button>
-                    </div>
-                </div>
-
+            <div class="btnsEdit-delete">
+              <button id="btnEdit">
+                <img src="./assets/images/pen.png" alt="btn edit" />
+              </button>
+              <button id="btnDelete">
+                <img src="./assets/images/trash-bin.png" alt="btn trash" />
+              </button>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!---------------- mobile interface --------------->
-        <section class="allTasks-mobile">
-            <h1>Lista to do</h1>
+      <!---------------- mobile interface --------------->
+      <section class="allTasks-mobile">
+        <h1>Lista to do</h1>
 
-            <div class="allTasks">
-                <h2>Tarefas</h2>
-                <div class="task-div">
-                    <div class="taskInformations">
-                        <label for=""> <input type="checkbox" id="checkTask" class="checkTask">Limpar casa</label>
-                        <span class="tagSpan">Casa</span>
-                    </div>
-                    <div class="btnsEdit-delete">
-                        <button id="btnEdit"><img src="./assets/images/pen.png" alt="btn edit"></button>
-                        <button id="btnDelete"><img src="./assets/images/trash-bin.png" alt="btn trash"></button>
-                    </div>
-                </div>
-
-                <button class="btnMobile-addtask"><span>+</span></button>
+        <div class="allTasks">
+          <h2>Tarefas</h2>
+          <div class="task-div">
+            <div class="taskInformations">
+              <label for="">
+                <input type="checkbox" id="checkTask" class="checkTask" />Limpar
+                casa</label
+              >
+              <span class="tagSpan">Casa</span>
             </div>
-        </section>
-
-        <section class="createTasks-mobile">
-            <h2>Adicione uma tarefa</h2>
-
-            <div class="inputs-mobile">
-                <label for="input-task">Tarefa</label>
-                <input id="input-task" type="text">
-
-                <label for="tag">Tag</label>
-                <select id="tagSelect-mobile">
-                    <option value="pessoal">Pessoal</option>
-                </select>
-
-                <button id="createTag-mobile" onclick="toggleInputTag('mobile')">+ adicionar nova tag</button>
-                <input id="getTag-mobile" type="text" style="display: none;">
-                <button id="saveTag-mobile" onclick="saveTag('mobile')">Salvar Tag</button>
-                <button id="btnCreateTask" onclick="createTaskMobile()">Pronto</button>
+            <div class="btnsEdit-delete">
+              <button id="btnEdit">
+                <img src="./assets/images/pen.png" alt="btn edit" />
+              </button>
+              <button id="btnDelete">
+                <img src="./assets/images/trash-bin.png" alt="btn trash" />
+              </button>
             </div>
+          </div>
 
-        </section>
+          <button class="btnMobile-addtask"><span>+</span></button>
+        </div>
+      </section>
 
+      <section class="createTasks-mobile">
+        <h2>Adicione uma tarefa</h2>
+
+        <div class="inputs-mobile">
+          <label for="input-task">Tarefa</label>
+          <input id="input-task" type="text" />
+
+          <label for="tag">Tag</label>
+          <select id="tagSelect-mobile">
+            <option value="pessoal">Pessoal</option>
+          </select>
+
+          <button id="createTag-mobile" onclick="toggleInputTag('mobile')">
+            + adicionar nova tag
+          </button>
+          <input id="getTag-mobile" type="text" style="display: none" />
+          <button id="saveTag-mobile" onclick="saveTag('mobile')">
+            Salvar Tag
+          </button>
+          <button id="btnCreateTask" onclick="createTaskMobile()">
+            Pronto
+          </button>
+        </div>
+      </section>
     </main>
 
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>
