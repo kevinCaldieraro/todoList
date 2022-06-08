@@ -25,7 +25,7 @@
                     <option value="personal">Pessoal</option>
                 </select>
 
-                <button id="createTag-desktop" onclick="show_hideInputTag_desktop()">+ adicionar nova tag</button>
+                <button id="createTag-desktop" onclick="toggleInputTag('desktop')">+ adicionar nova tag</button>
                 <input id="getTag-desktop" type="text" style="display: none;">
                 <button id="saveTag-desktop" onclick="saveTag('desktop')">Salvar Tag</button>
                 <button id="btnCreateTask">Pronto</button>
@@ -84,7 +84,7 @@
                     <option value="pessoal">Pessoal</option>
                 </select>
 
-                <button id="createTag-mobile" onclick="show_hideInputTag_mobile()">+ adicionar nova tag</button>
+                <button id="createTag-mobile" onclick="toggleInputTag('mobile')">+ adicionar nova tag</button>
                 <input id="getTag-mobile" type="text" style="display: none;">
                 <button id="saveTag-mobile" onclick="saveTag('mobile')">Salvar Tag</button>
                 <button id="btnCreateTask" onclick="createTaskMobile()">Pronto</button>

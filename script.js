@@ -25,17 +25,22 @@ let btnCreateTagMobile = document.getElementById('createTag-mobile');
 let inputGetTagMobile = document.getElementById('getTag-mobile');
 let btnSaveTagMobile = document.getElementById('saveTag-mobile');
 
+let inputTag;
+
 // Mostrar/Esconder
-function toggleInputTag(type, inputTag) {
+function toggleInputTag(type) {
     let btnSave;
     let btnCreate;
 
     if (type === 'desktop') {
         btnSave = btnSaveTagDesk;
         btnCreate = btnCreateTagDesk;
+        inputTag = inputGetTagDesk;
+
     } else {
         btnSave = btnSaveTagMobile;
         btnCreate = btnCreateTagMobile;
+        inputTag = inputGetTagMobile;
     }
 
     if (inputTag.style.display == 'none') {
@@ -49,12 +54,11 @@ function toggleInputTag(type, inputTag) {
     }
 }
 
-//Função para fazer o botão .saveTag pegar o valor da nova tag e implementar no select ----------------
+//Função para fazer o botão saveTag pegar o valor da nova tag e implementar no select ----------------
 let selectTagDesktop = document.getElementById('tagSelect-desktop');
 let selectTagMobile = document.getElementById('tagSelect-mobile');
 
 function saveTag(type) {
-    let inputTag;
 
     if (type === 'desktop') {
         inputTag = inputGetTagDesk;
@@ -66,7 +70,7 @@ function saveTag(type) {
         selectTagDesktop.innerHTML += '<option value = '+inputTag.value+'>'+inputTag.value+'</option>';
         selectTagMobile.innerHTML += '<option value = '+inputTag.value+'>'+inputTag.value+'</option>';
         inputTag.value = '';
-        toggleInputTag(type, inputTag);
+        toggleInputTag(type);
         alert('Tag criada');
     } else {
         alert('Para criar uma nova tag é necessário preencher o campo de texto!');
