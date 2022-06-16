@@ -1,19 +1,13 @@
-let tasks = [];
-let tags = [];
-let myStorage = window.localStorage;
-
-loadTags();
-
 //Animação para a tela de adicionar tarefa aparecer no mobile -----------------------
 let btnToScreenAdd = document.querySelector('.btnMobile-addtask');
-let screeAddTasks = document.querySelector('.createTasks-mobile');
+let screenAddTasks = document.querySelector('.createTasks-mobile');
 
 btnToScreenAdd.addEventListener('click', () => {
-  screeAddTasks.classList.toggle('active');
+  screenAddTasks.classList.toggle('active');
 });
 
 function createTaskMobile() {
-  screeAddTasks.classList.toggle('active');
+  screenAddTasks.classList.toggle('active');
 }
 // ----------------------------------------------------------------------------------
 
@@ -51,41 +45,5 @@ function toggleInputTag(type) {
     inputTag.style.display = 'none';
     btnSave.style.display = 'none';
     btnCreate.innerHTML = '+ adicionar nova tag';
-  }
-}
-
-//Função para fazer o botão saveTag pegar o valor da nova tag e implementar no select ----------------
-let selectTagDesktop = document.getElementById('tagSelect-desktop');
-let selectTagMobile = document.getElementById('tagSelect-mobile');
-
-function saveTag(type) {
-  if (type === 'desktop') {
-    inputTag = inputGetTagDesk;
-  } else {
-    inputTag = inputGetTagMobile;
-  }
-
-  if (inputTag.value != '') {
-    selectTagDesktop.innerHTML +=
-      '<option value = ' + inputTag.value + '>' + inputTag.value + '</option>';
-    selectTagMobile.innerHTML +=
-      '<option value = ' + inputTag.value + '>' + inputTag.value + '</option>';
-
-    tags.push(inputTag.value);
-    myStorage.setItem('savedTags', JSON.stringify(tags));
-
-    inputTag.value = '';
-    toggleInputTag(type);
-    alert('Tag criada');
-  } else {
-    alert('Para criar uma nova tag é necessário preencher o campo de texto!');
-  }
-}
-
-function loadTags() {
-  tags = JSON.parse(myStorage.getItem('savedTags'));
-
-  if (tags) {
-    console.log(tags);
   }
 }
