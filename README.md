@@ -1,3 +1,3 @@
 # todoList
 
-🚧 Em construção 🚧
+🚧 Em desenvolvimento 🚧
